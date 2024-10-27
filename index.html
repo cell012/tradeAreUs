@@ -92,22 +92,22 @@
             transform: translateY(-5px);
         }
         .hero-image {
-            display: flex;
-            align-items: center;
-            margin-left: 20px; /* Space between the text and the image */
-        }
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Space between the text and the image */
+    flex: 1; /* Allow flex to take available space */
+}
         .qr-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin-right: 20px; /* Space between QR and Rectangle */
         }
-        .qr-image {
-            width: 350px; 
-            height: 350px; /* Adjust the size as needed */
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+      .qr-image {
+    width: 100%; /* Scale QR image to be responsive */
+    max-width: 350px; /* Maintain a maximum width */
+    height: auto; /* Maintain aspect ratio */
+}
         .download-qr-btn {
             margin-top: 10px;
             padding: 10px 20px;
@@ -122,9 +122,11 @@
             background-color: #006666;
         }
         .rectangle-image {
-            height: 550px; /* Set to match the height of the QR code */
-            border-radius: 10px;
-        }
+    width: 100%; /* Set width to 100% to fill the available space */
+    max-height: 550px; /* Set max-height to prevent it from becoming too tall */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-radius: 10px;
+}
 
         /* Features Section */
         .features {
